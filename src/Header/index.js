@@ -5,7 +5,7 @@ function Header() {
     <AppBar position="static">
       <Container maxWidth="md">
         <Toolbar>
-          <Typography variant="h6">React App</Typography>
+          <Typography variant="h6">Uncle Buzz`&apos`s Store of Forbidden Goods</Typography>
         </Toolbar>
       </Container>
     </AppBar>
