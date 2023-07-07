@@ -1,4 +1,4 @@
-/* .productCards {
+.productCards {
   display: inline-flex;
   flex-wrap: wrap;
   margin-left: auto;
@@ -18,4 +18,4 @@
   font-size: 30px;
   font-weight: bold;
   margin: 20px;
-} */
+}
