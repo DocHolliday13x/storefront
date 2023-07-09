@@ -1,6 +1,5 @@
 import Header from './Components/Header/index'
 import Categories from './Components/Categories/index'
-import ActiveCategory from './Components/ActiveCategory/index'
 import Products from './Components/Products/index'
 import Footer from './Components/Footer/index'
 
@@ -12,7 +11,6 @@ function App() {
     <>
       <Header />
       <Categories />
-      <ActiveCategory />
       <Products />
       <Footer />
     </>
@@ -20,4 +18,4 @@ function App() {
 }
 
 
-export default App
+export default App;
