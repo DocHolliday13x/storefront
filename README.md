@@ -17,6 +17,8 @@
 ### Links and Resources
 
 - [GitHub Actions ci/cd](https://github.com/DocHolliday13x/storefront/actions/)
+- [Vite .env Docs](https://vitejs.dev/guide/env-and-mode.html#env-files)
+- [Material UI](https://mui.com/core/)
 <!-- - [back-end server url](http://xyz.com) (when applicable)
 - [front-end application](http://xyz.com) (when applicable) -->
 
