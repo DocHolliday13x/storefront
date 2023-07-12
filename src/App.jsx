@@ -1,7 +1,9 @@
-import Header from './Components/Header/index'
-import Categories from './Components/Categories/index'
-import Products from './Components/Products/index'
-import Footer from './Components/Footer/index'
+import Header from './Components/Header';
+import Categories from './Components/Categories';
+import Products from './Components/Products';
+import Footer from './Components/Footer/index';
+import SimpleCart from './Components/SimpleCart';
+import './App.scss';
 
 
 function App() {
@@ -9,9 +11,12 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Categories />
-      <Products />
+      <div className="content">
+        <Header />
+        <Categories />
+        <SimpleCart />
+        <Products />
+      </div>
       <Footer />
     </>
   )
@@ -19,3 +24,6 @@ function App() {
 
 
 export default App;
+
+
+

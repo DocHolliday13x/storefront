@@ -1,12 +1,23 @@
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import { set } from '../../store/reducer';
+import { getCategories, setCategory } from '../../store/categories';
+import { setProducts } from '../../store/products';
 
 function Categories() {
-  const { categories } = useSelector((state) => state.store)
+  const { categories } = useSelector((state) => state.categories)
   // console.log('categories', categories);
   const dispatch = useDispatch();
+
+  const setDispatcher = (category) => {
+    dispatch(setCategory(category));
+    // dispatch(setProducts(category));
+  };
+
+  useEffect(() => {
+    dispatch(getCategories());
+  }, []);
 
   return (
     <>
@@ -16,9 +27,9 @@ function Categories() {
           categories.map((category, index) => (
             <Button
               key={`categories-${index}`}
-              onClick={() => dispatch(set(category))}
+              onClick={() => setDispatcher(category)}
             >
-              {category.displayName}
+              {category.name}
             </Button>
           ))
         }
@@ -28,4 +39,4 @@ function Categories() {
   )
 }
 
-export default Categories
+export default Categories;
