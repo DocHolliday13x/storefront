@@ -32,6 +32,18 @@
 - *As a user, I want to interact with live inventory so that I have confidence that the displayed products are in stock.*
 - *As a user, I want to know to that when I add an item to my cart, that it is removed from inventory so that no other users can purchase it.*
 
+- **Lab 39: Phase 4** Today we will be completing our storefront application by adding two full pages to view - Product Details and Checkout. We'll be using React Router to accomplish this.
+
+*The User/Developer Stories from Phase 1, Phase 2, and Phase 3 will remain unchanged. We will add 2 more User stories to meet the new requirements.*
+
+- As a user, I expect to see a list of available product categories in the store so that I can easily browse products.
+- As a user, I want to choose a category and see a list of all available products matching that category.
+- As a user, I want a clean, easy to use user interface so that I can shop the online store with confidence.
+- As a user, I want to interact with live inventory so that I have confidence that the displayed products are in stock.
+- As a user, I want to know to that when I add an item to my cart, that it is removed from inventory so that no other users can purchase it.
+- *As a user, I want to view the details of a single product so that I can make a more informed choice about purchasing it.*
+- *As a user, I want to see my full cart and initiate the checkout process so that I can purchase my items and have them delivered.*
+
 ### Links and Resources
 
 - [GitHub Actions ci/cd](https://github.com/DocHolliday13x/storefront/actions/)
@@ -74,14 +86,20 @@ for now I have none and do not require one
 
 #### Features / Routes
 
-- Feature One: Details of feature
-- GET : `/hello` - specific route to hit
+- Display products from an API call in a redux store that can be changed by the user clicking on a category
+- Allow users to view the details of a single product
+- Allow users to view thier cart and total of the items in the cart
+- Allow users to add and remove items from thier cart
+
 
 #### Tests
 
 - *How do you run tests?*
+  - `npm run test`
 - *Any tests of note?*
+  - Not specifically
 - *Describe any tests that you did not complete, skipped, etc*
+  - I did not test the API calls
 
 #### UML
 
@@ -92,3 +110,5 @@ for now I have none and do not require one
 - ![Phase 2 UML](./public/lab37Whiteboard.png)
 
 - ![Phase 3 UML](./public/lab38Whiteboard.png)
+
+- ![Phase 4 UML](./public/lab39Whiteboard.png)
