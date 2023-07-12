@@ -1,4 +1,5 @@
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { When } from 'react-if';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -7,9 +8,25 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import { addToCart } from '../../store/cart';
+import { getProducts, decrementInventoryOnAdd } from '../../store/products';
+
 
 function Products() {
-  const { activeCategory, products } = useSelector((state) => state.store)
+  const { activeCategory } = useSelector((state) => state.categories);
+  const { products } = useSelector((state) => state);
+   console.log('this is products.....', products)
+  const dispatch = useDispatch();
+
+  const addDispatcher = (product) => {
+    dispatch(addToCart(product));
+    dispatch(decrementInventoryOnAdd(product));
+  };
+
+  useEffect(() => {
+    dispatch(getProducts(activeCategory.name))
+  }, [activeCategory]);
+
   return (
     <>
       <When condition={activeCategory}>
@@ -32,7 +49,12 @@ function Products() {
 
                   </CardContent>
                   <CardActions>
-                    <Button size="small">ADD TO CART</Button>
+                    <Button
+                      onClick={() => addDispatcher(product)}
+                      size="small"
+                    >
+                      ADD TO CART
+                    </Button>
                     <Button size="small">VIEW DETAILS</Button>
                   </CardActions>
                 </Card>
@@ -46,8 +68,8 @@ function Products() {
 }
 
 
-export default Products;
 
+export default Products;
 
 
 
