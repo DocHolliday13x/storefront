@@ -3,6 +3,7 @@ import Categories from './Components/Categories';
 import Products from './Components/Products';
 import Footer from './Components/Footer/index';
 import SimpleCart from './Components/SimpleCart';
+import './App.scss';
 
 
 function App() {

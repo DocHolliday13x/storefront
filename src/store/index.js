@@ -4,7 +4,7 @@ import productReducer from './products';
 import cartReducer from './cart';
 
 
-const store = configureStore({
+const store = () => configureStore({
   reducer: {
     categories: categoryReducer,
     products: productReducer,

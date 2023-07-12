@@ -5,8 +5,8 @@ const categorySlice = createSlice({
   name: 'categories',
   initialState: {
     categories: [],
-    loading: false,
-    error: null,
+    // loading: false,
+    // error: null,
     activeCategory: '',
   },
   reducers: {
@@ -20,7 +20,7 @@ const categorySlice = createSlice({
 });
 
 
-export const getCategory = () => async (dispatch, getState) => {
+export const getCategories = () => async (dispatch, getState) => {
   // This is where we hit our API to get categories from DB
   let response = await axios.get('https://api-js401.herokuapp.com/api/v1/categories');
   dispatch(setInitialCategories(response.data.results));
