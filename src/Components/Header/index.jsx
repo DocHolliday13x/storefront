@@ -1,27 +1,40 @@
-import { AppBar, Grid, Toolbar, Typography } from '@mui/material';
-import { useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
+import { AppBar, Box, Button, Container, Toolbar, Typography } from '@mui/material';
 
 
 function Header() {
-  const cart = useSelector(state => state); // Use the entire state array as the value for cart
+
+const { cart } = useSelector((state) => state.cart);
+
   return (
-    <>
-      <AppBar position="static">
-        <Toolbar className="toolBar">
-          <Grid container justifyContent="space-between" alignItems="center">
-            <Grid item>
-              <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>Our Store</Typography>
-            </Grid>
-            <Grid item xs style={{ textAlign: 'right', alignSelf: 'center' }}>
-              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>Cart ({cart.length})</Typography>
-            </Grid>
-          </Grid>
+    <Box sx={{ flexGrow: 1 }}>
+    <AppBar
+      position='static'
+      sx={{ backgroundColor: 'white' }}
+    >
+      <Container>
+        <Toolbar
+          disableGutters
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+          }}
+          >
+          <Typography
+            className='storeName'
+            variant='h4'
+            sx={{ color: 'black' }}>
+            Uncle Buzz's Store of Forbidden Items
+          </Typography>
+          <Button>
+            Cart ({cart.length})
+          </Button>
         </Toolbar>
-      </AppBar>
-    </>
+      </Container>
+    </AppBar>
+    </Box>
   )
 }
-
 
 
 export default Header;

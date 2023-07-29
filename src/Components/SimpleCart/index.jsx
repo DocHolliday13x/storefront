@@ -1,44 +1,45 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { When } from 'react-if';
-import { removeFromCart } from '../../store/cart';
-import { incrementInventoryOnRemove } from '../../store/products';
+import { Box, IconButton, Typography } from "@mui/material";
+import { removeFromCart } from '../../store/actions';
+import DeleteIcon from '@mui/icons-material/Delete';
+import '../../../App.css';
 
 
-function SimpleCart() {
-  const { cart } = useSelector(state => state);
+const SimpleCart = () => {
+
   const dispatch = useDispatch();
-
-  const removeDispatcher = (product) => {
-    dispatch(removeFromCart(product));
-    dispatch(incrementInventoryOnRemove(product));
-  };
+  const { cart } = useSelector((state) => state.cart);
 
   return (
     <>
-      <When condition={cart.length > 0}>
-        <div className="simple-cart">
-          <ul>
-
-            {
-              cart.map((product, index) => (
-                <li key={`simpleCart-${index}`} className="item">
-                  {product.name}
-                  <span
-                    onClick={() => removeDispatcher(product)}
-                    className="remove"
-                  >
-                    X
-                  </span>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-      </When>
+        {
+          cart.map((product, index) => {
+            return (
+              <Box
+                className='cart-items'
+                key={`cart-${index}`}
+                sx={{
+                  justifyContent: "space-between",
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  width: "80px",
+                  margin: 'auto',
+                }}
+              >
+                <Typography>{product.name}</Typography>
+                <IconButton>
+                  <DeleteIcon fontSize="small" onClick={() => dispatch(removeFromCart(product))} />
+                </IconButton>
+              </Box>
+            )
+          }
+          )
+        }
+    
     </>
-  )
-}
-
+  );
+};
 
 
 export default SimpleCart;
