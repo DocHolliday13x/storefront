@@ -1,26 +1,30 @@
-//! WE DON'T NEED THIS FILE ANYMORE BECAUSE WE ARE USING REDUX-TOOLKIT
+export const changeProducts = (category) => {
+  return {
+    type: 'CHANGE_PRODUCTS',
+    payload: category,
+  }
+}
 
-//? Actions are functions that return objects
-// export const set = (category) => {
-//   return {
-//     type: 'SET',
-//     payload: category,
-//   }
-// }
+export const addToCart = (product) => {
+  return {
+    type: 'ADD_TO_CART',
+    payload: product,
+  }
+}
 
-// export const add = (product) => {
-//   return {
-//     type: 'ADD',
-//     payload: product
-//   }
-// }
+export const removeFromCart = (product) => {
+  return {
+    type: 'REMOVE_FROM_CART',
+    payload: product,
+  }
+}
 
-// export const remove = (product) => {
-//   return {
-//     type: 'REMOVE',
-//     payload: product
-//   }
-// }
+export const reset = () => {
+  return {
+    type: 'RESET',
+    payload: {}
+  }
+}
 
 
 

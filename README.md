@@ -91,7 +91,6 @@ for now I have none and do not require one
 - Allow users to view thier cart and total of the items in the cart
 - Allow users to add and remove items from thier cart
 
-
 #### Tests
 
 - *How do you run tests?*

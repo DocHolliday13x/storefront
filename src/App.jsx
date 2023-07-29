@@ -1,22 +1,20 @@
-import Header from './Components/Header';
 import Categories from './Components/Categories';
+import Footer from './Components/Footer';
+import Header from './Components/Header'
 import Products from './Components/Products';
-import Footer from './Components/Footer/index';
+import ActiveCategory from './Components/ActiveCategory';
 import SimpleCart from './Components/SimpleCart';
-import './App.scss';
 
 
 function App() {
 
-
   return (
     <>
-      <div className="content">
-        <Header />
-        <Categories />
-        <SimpleCart />
-        <Products />
-      </div>
+      <Header /> 
+      <Categories />
+      <SimpleCart />
+      <ActiveCategory />
+      <Products />
       <Footer />
     </>
   )
